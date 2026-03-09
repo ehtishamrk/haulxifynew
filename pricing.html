@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing | Haulxify — Remote Back-Office for Logistics</title>
+  <meta name="description" content="Transparent, affordable pricing for Haulxify's remote back-office services. Dispatch, bookkeeping, compliance, and front desk — starting at $4/hour. 75% less than in-house.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://haulxify.com/pricing.html">
+  <meta property="og:title" content="Pricing | Haulxify">
+  <meta property="og:description" content="Remote back-office starting at $4/hour. No contracts. 75% cheaper than in-house.">
+  <meta property="og:type" content="website">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "PriceSpecification",
+    "name": "Haulxify Back Office Services Pricing",
+    "description": "Remote logistics back-office services starting at $4/hour",
+    "priceCurrency": "USD",
+    "price": "4.00"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/footer.css">
+
+  <style>
+    /* ============================================================
+       PRICING PAGE — INLINE STYLES
+       ============================================================ */
+
+    /* Hero */
+    .pricing-hero {
+      padding: 9rem 5% 5rem;
+      background: var(--navy);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .pricing-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 52px 52px;
+      pointer-events: none;
+    }
+    .pricing-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -120px; left: 50%;
+      transform: translateX(-50%);
+      width: 600px; height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,119,34,0.12), transparent 70%);
+      pointer-events: none;
+    }
+    .pricing-hero__inner { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; }
+    .pricing-hero h1 {
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      color: var(--white);
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      margin-bottom: 1rem;
+    }
+    .pricing-hero h1 em { font-style: italic; color: var(--orange); }
+    .pricing-hero p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
+    }
+
+    /* Billing Toggle */
+    .billing-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 50px;
+      padding: 0.45rem 0.5rem 0.45rem 1.25rem;
+    }
+    .billing-toggle__label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.55);
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+    }
+    .billing-toggle__label.active { color: var(--white); }
+    .toggle-switch {
+      position: relative;
+      width: 44px; height: 24px;
+      background: rgba(255,255,255,0.12);
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background 0.25s;
+      border: none;
+      flex-shrink: 0;
+    }
+    .toggle-switch::after {
+      content: '';
+      position: absolute;
+      top: 3px; left: 3px;
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      background: var(--white);
+      transition: transform 0.25s var(--ease);
+    }
+    .toggle-switch.on { background: var(--orange); }
+    .toggle-switch.on::after { transform: translateX(20px); }
+    .billing-badge {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: var(--orange);
+      color: var(--white);
+      padding: 0.25rem 0.6rem;
+      border-radius: 20px;
+    }
+
+    /* Savings Banner */
+    .savings-banner {
+      background: var(--orange-light);
+      border: 1px solid rgba(232,119,34,0.22);
+      border-left: 4px solid var(--orange);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.875rem;
+      max-width: 860px;
+      margin: 0 auto 3rem;
+    }
+    .savings-banner i { color: var(--orange); font-size: 1.1rem; flex-shrink: 0; }
+    .savings-banner p { font-size: 0.88rem; color: #7a5c3a; line-height: 1.5; margin: 0; }
+    .savings-banner strong { color: var(--navy); }
+
+    /* Pricing Cards */
+    .pricing-section {
+      padding: 5rem 5% 6rem;
+      background: var(--white);
+    }
+    .pricing-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      max-width: 1060px;
+      margin: 0 auto;
+      align-items: stretch;
+    }
+    .pricing-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 2.25rem 2rem;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: box-shadow 0.25s, transform 0.25s, border-color 0.25s;
+    }
+    .pricing-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
+    }
+    .pricing-card--featured {
+      border-color: var(--orange);
+      background: var(--navy);
+      box-shadow: 0 16px 48px rgba(13,25,41,0.18), 0 0 0 1px rgba(232,119,34,0.3);
+      transform: scale(1.03);
+    }
+    .pricing-card--featured:hover {
+      transform: scale(1.03) translateY(-4px);
+      box-shadow: 0 24px 64px rgba(13,25,41,0.22);
+    }
+
+    .pricing-card__badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--orange);
+      color: var(--white);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.28rem 0.875rem;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    .pricing-card__tier {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.625rem;
+    }
+    .pricing-card--featured .pricing-card__tier { color: rgba(255,255,255,0.4); }
+
+    .pricing-card__name {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.01em;
+    }
+    .pricing-card--featured .pricing-card__name { color: var(--white); }
+
+    .pricing-card__tagline {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 1.75rem;
+      padding-bottom: 1.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .pricing-card--featured .pricing-card__tagline {
+      color: rgba(255,255,255,0.45);
+      border-color: rgba(255,255,255,0.1);
+    }
+
+    .pricing-card__price {
+      display: flex;
+      align-items: flex-end;
+      gap: 0.25rem;
+      margin-bottom: 0.4rem;
+    }
+    .price-currency {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      color: var(--navy);
+      line-height: 1;
+      padding-bottom: 6px;
+    }
+    .pricing-card--featured .price-currency { color: var(--orange); }
+    .price-amount {
+      font-family: var(--font-display);
+      font-size: 3.2rem;
+      color: var(--navy);
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+    .pricing-card--featured .price-amount { color: var(--white); }
+    .price-period {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      padding-bottom: 8px;
+    }
+    .pricing-card--featured .price-period { color: rgba(255,255,255,0.4); }
+    .price-monthly-note {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 1.75rem;
+    }
+    .pricing-card--featured .price-monthly-note { color: rgba(255,255,255,0.4); }
+    .price-original {
+      text-decoration: line-through;
+      opacity: 0.5;
+    }
+    .price-saving {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: #22c55e;
+      background: rgba(34,197,94,0.1);
+      padding: 0.2rem 0.5rem;
+      border-radius: 20px;
+      margin-left: 0.4rem;
+    }
+    .pricing-card--featured .price-saving {
+      background: rgba(34,197,94,0.15);
+    }
+
+    .pricing-card__features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+      flex: 1;
+    }
+    .pricing-card__features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.625rem;
+      font-size: 0.85rem;
+      color: var(--text-body);
+      line-height: 1.5;
+    }
+    .pricing-card--featured .pricing-card__features li { color: rgba(255,255,255,0.7); }
+    .pricing-card__features li i {
+      color: var(--orange);
+      font-size: 0.75rem;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+    .pricing-card--featured .pricing-card__features li i { color: var(--orange); }
+    .feat-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 0.25rem 0;
+    }
+    .pricing-card--featured .feat-divider { background: rgba(255,255,255,0.08); }
+    .feat-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted) !important;
+      margin-top: 0.25rem;
+    }
+    .pricing-card--featured .feat-label { color: rgba(255,255,255,0.3) !important; }
+    .feat-label i { display: none !important; }
+
+    .pricing-card__cta {
+      display: block;
+      text-align: center;
+      padding: 0.9rem;
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: all 0.2s var(--ease);
+      margin-top: auto;
+    }
+    .cta--outline {
+      border: 1.5px solid var(--border-dark);
+      color: var(--navy);
+    }
+    .cta--outline:hover {
+      border-color: var(--navy);
+      background: var(--off);
+    }
+    .cta--fill {
+      background: var(--orange);
+      color: var(--white);
+      box-shadow: 0 4px 16px rgba(232,119,34,0.3);
+    }
+    .cta--fill:hover {
+      background: var(--orange-dark);
+      box-shadow: 0 8px 24px rgba(232,119,34,0.4);
+      transform: translateY(-1px);
+    }
+    .cta--ghost-light {
+      border: 1.5px solid rgba(255,255,255,0.2);
+      color: var(--white);
+    }
+    .cta--ghost-light:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.5);
+    }
+
+    /* All prices data */
+    [data-hourly], [data-monthly] { transition: opacity 0.2s; }
+
+    /* Custom / Enterprise strip */
+    .custom-strip {
+      max-width: 1060px;
+      margin: 2.5rem auto 0;
+      background: var(--off);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 1.75rem 2.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .custom-strip__left h3 {
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.35rem;
+    }
+    .custom-strip__left p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* What's Included breakdown */
+    .includes-section {
+      padding: 6rem 5%;
+      background: var(--off);
+    }
+    .includes-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      max-width: 1060px;
+      margin: 0 auto;
+    }
+    .includes-col {
+      background: var(--white);
+      padding: 2rem 1.5rem;
+    }
+    .includes-col__icon {
+      width: 40px; height: 40px;
+      border-radius: var(--radius-sm);
+      background: var(--orange-light);
+      color: var(--orange);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+    .includes-col h3 {
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.875rem;
+    }
+    .includes-col ul { list-style: none; }
+    .includes-col ul li {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      padding: 0.35rem 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .includes-col ul li:last-child { border-bottom: none; }
+    .includes-col ul li::before {
+      content: '→';
+      color: var(--orange);
+      font-size: 0.7rem;
+      flex-shrink: 0;
+    }
+
+    /* FAQ */
+    .faq-section {
+      padding: 6rem 5%;
+      background: var(--white);
+    }
+    .faq-list {
+      max-width: 760px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      padding: 1.4rem 1.75rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--navy);
+      transition: background 0.18s;
+    }
+    .faq-question:hover { background: var(--off); }
+    .faq-question i {
+      font-size: 0.75rem;
+      color: var(--orange);
+      flex-shrink: 0;
+      transition: transform 0.25s var(--ease);
+    }
+    .faq-item.open .faq-question i { transform: rotate(45deg); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s var(--ease-out), padding 0.25s;
+      font-size: 0.875rem;
+      color: var(--text-body);
+      line-height: 1.75;
+      padding: 0 1.75rem;
+    }
+    .faq-answer-inner { padding-bottom: 1.4rem; }
+    .faq-item.open .faq-answer { max-height: 300px; }
+
+    /* Trust Indicators */
+    .trust-row {
+      padding: 3.5rem 5%;
+      background: var(--off);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .trust-row__inner {
+      max-width: 1060px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .trust-item i {
+      font-size: 1rem;
+      color: var(--orange);
+    }
+
+    /* Final CTA */
+    .pricing-final-cta {
+      padding: 6rem 5%;
+      background: var(--navy);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .pricing-final-cta::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 70% 30%, rgba(232,119,34,0.1), transparent 55%);
+      pointer-events: none;
+    }
+    .pricing-final-cta__inner {
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .pricing-final-cta h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      color: var(--white);
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .pricing-final-cta p {
+      color: rgba(255,255,255,0.55);
+      font-size: 0.95rem;
+      line-height: 1.75;
+      margin-bottom: 2rem;
+    }
+    .pricing-final-cta__actions {
+      display: flex;
+      gap: 0.875rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .pricing-cards { grid-template-columns: 1fr; max-width: 460px; }
+      .pricing-card--featured { transform: none; }
+      .pricing-card--featured:hover { transform: translateY(-4px); }
+      .includes-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .pricing-hero { padding: 8rem 5% 4rem; }
+      .includes-grid { grid-template-columns: 1fr; }
+      .trust-row__inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .custom-strip { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- NAV -->
+<nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo"><span class="logo-mark">H</span>AULXIFY</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" class="nav-link">Home</a></li>
+    <li class="nav-item-dropdown">
+      <button class="nav-link nav-link--dropdown" aria-haspopup="true" aria-expanded="false" id="servicesBtn">
+        Services <i class="fas fa-chevron-down nav-chevron"></i>
+      </button>
+      <div class="dropdown-menu" role="menu">
+        <a href="services/truck-dispatch.html" class="dropdown-link"><i class="fas fa-truck"></i> Truck Dispatch</a>
+        <a href="services/tow-truck.html" class="dropdown-link"><i class="fas fa-truck-pickup"></i> Tow Truck Dispatch</a>
+        <a href="services/taxi-dispatch.html" class="dropdown-link"><i class="fas fa-taxi"></i> Taxi &amp; Rideshare</a>
+        <a href="services/sprinter-van.html" class="dropdown-link"><i class="fas fa-shuttle-van"></i> Sprinter / Cargo Van</a>
+        <a href="services/medical-transport.html" class="dropdown-link"><i class="fas fa-ambulance"></i> Medical Transport (NEMT)</a>
+        <a href="services/car-hauler.html" class="dropdown-link"><i class="fas fa-car"></i> Car Hauler</a>
+        <a href="services/dump-truck.html" class="dropdown-link"><i class="fas fa-dumpster"></i> Dump Truck</a>
+        <a href="services/moving-truck.html" class="dropdown-link"><i class="fas fa-dolly"></i> Moving Truck</a>
+        <a href="services/freight-broker.html" class="dropdown-link"><i class="fas fa-handshake"></i> Freight Broker Support</a>
+        <a href="services/bookkeeping.html" class="dropdown-link"><i class="fas fa-calculator"></i> Bookkeeping &amp; Taxes</a>
+        <a href="services/compliance.html" class="dropdown-link"><i class="fas fa-clipboard-check"></i> DOT Compliance</a>
+        <a href="services/limousine.html" class="dropdown-link"><i class="fas fa-car-side"></i> Limousine &amp; Luxury</a>
+      </div>
+    </li>
+    <li><a href="pricing.html" class="nav-link active">Pricing</a></li>
+    <li><a href="about.html" class="nav-link">About</a></li>
+    <li><a href="blog.html" class="nav-link">Blog</a></li>
+    <li><a href="contact.html" class="nav-link">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="hauler.html" target="_blank" rel="noopener" class="nav-btn nav-btn--hauler"><i class="fas fa-users"></i> Hauler</a>
+    <a href="contact.html" class="nav-btn nav-btn--primary">Get Started</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <button class="mobile-menu__close" id="mobileMenuClose"><i class="fas fa-times"></i></button>
+  <ul class="mobile-menu__links">
+    <li><a href="index.html">Home</a></li>
+    <li><button class="mobile-dropdown-toggle">Services <i class="fas fa-chevron-down"></i></button>
+      <ul class="mobile-dropdown-list">
+        <li><a href="services/truck-dispatch.html">Truck Dispatch</a></li>
+        <li><a href="services/tow-truck.html">Tow Truck</a></li>
+        <li><a href="services/taxi-dispatch.html">Taxi &amp; Rideshare</a></li>
+        <li><a href="services/medical-transport.html">NEMT</a></li>
+        <li><a href="services/bookkeeping.html">Bookkeeping</a></li>
+        <li><a href="services/compliance.html">DOT Compliance</a></li>
+      </ul>
+    </li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="mobile-menu__cta">Get Started Free</a>
+</div>
+<div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+<main id="main-content">
+
+  <!-- HERO -->
+  <section class="pricing-hero" aria-labelledby="pricing-hero-heading">
+    <div class="pricing-hero__inner">
+      <span class="section-tag section-tag--light">Transparent Pricing</span>
+      <h1 id="pricing-hero-heading">Simple Pricing.<br><em>Zero Surprises.</em></h1>
+      <p>Flat hourly rates. No hidden fees. No long-term lock-in. Cancel anytime.<br>Choose hourly for flexibility or monthly for savings.</p>
+
+      <div class="billing-toggle" role="group" aria-label="Billing period toggle">
+        <span class="billing-toggle__label active" id="label-hourly">Hourly</span>
+        <button class="toggle-switch" id="billingToggle" aria-label="Switch to monthly billing" aria-pressed="false"></button>
+        <span class="billing-toggle__label" id="label-monthly">Monthly</span>
+        <span class="billing-badge">Save 15%</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING CARDS -->
+  <section class="pricing-section" aria-labelledby="plans-heading">
+    <div class="container">
+      <div class="savings-banner reveal">
+        <i class="fas fa-info-circle"></i>
+        <p><strong>How our pricing works:</strong> You pay per dedicated agent-hour. Each plan includes a dedicated specialist assigned to your account. Monthly pricing locks in a block of hours at a 15% discount vs. hourly. No setup fee — ever.</p>
+      </div>
+
+      <h2 class="visually-hidden" id="plans-heading">Pricing Plans</h2>
+
+      <div class="pricing-cards">
+
+        <!-- STARTER -->
+        <div class="pricing-card reveal stagger-1" id="card-starter">
+          <p class="pricing-card__tier">Starter</p>
+          <h3 class="pricing-card__name">Essential</h3>
+          <p class="pricing-card__tagline">For solo operators and small fleets getting started with a remote back office.</p>
+
+          <div class="pricing-card__price">
+            <span class="price-currency">$</span>
+            <span class="price-amount" data-hourly="4" data-monthly="560">4</span>
+            <span class="price-period" data-hourly-text="/hr · per agent" data-monthly-text="/mo · 160 hrs">/hr · per agent</span>
+          </div>
+          <p class="price-monthly-note" data-hourly-note="Minimum 40 hrs/month" data-monthly-note="~$3.50/hr · Save 15%">Minimum 40 hrs/month</p>
+
+          <ul class="pricing-card__features">
+            <li class="feat-label"><i></i>Back Office Services</li>
+            <li><i class="fas fa-check"></i> 1 dedicated specialist</li>
+            <li><i class="fas fa-check"></i> Dispatch (1 industry)</li>
+            <li><i class="fas fa-check"></i> Basic paperwork & filing</li>
+            <li><i class="fas fa-check"></i> Email &amp; message support</li>
+            <li><i class="fas fa-check"></i> Weekly summary report</li>
+            <div class="feat-divider"></div>
+            <li class="feat-label"><i></i>Coverage</li>
+            <li><i class="fas fa-check"></i> US timezone aligned</li>
+            <li><i class="fas fa-check"></i> 5 days/week coverage</li>
+            <li><i class="fas fa-check"></i> 48-hour onboarding</li>
+          </ul>
+
+          <a href="contact.html?plan=essential" class="pricing-card__cta cta--outline">
+            Get Started <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- GROWTH (FEATURED) -->
+        <div class="pricing-card pricing-card--featured reveal stagger-2" id="card-growth">
+          <div class="pricing-card__badge">Most Popular</div>
+          <p class="pricing-card__tier">Growth</p>
+          <h3 class="pricing-card__name">Professional</h3>
+          <p class="pricing-card__tagline">For growing operations that need full back-office coverage across multiple functions.</p>
+
+          <div class="pricing-card__price">
+            <span class="price-currency">$</span>
+            <span class="price-amount" data-hourly="5" data-monthly="800">5</span>
+            <span class="price-period" data-hourly-text="/hr · per agent" data-monthly-text="/mo · 176 hrs">/hr · per agent</span>
+          </div>
+          <p class="price-monthly-note" data-hourly-note="Ideal for 8hr/day coverage" data-monthly-note="~$4.55/hr · Save 15%">Ideal for 8hr/day coverage</p>
+
+          <ul class="pricing-card__features">
+            <li class="feat-label"><i></i>Everything in Essential, plus</li>
+            <li><i class="fas fa-check"></i> 1–2 dedicated specialists</li>
+            <li><i class="fas fa-check"></i> Dispatch across all industries</li>
+            <li><i class="fas fa-check"></i> Bookkeeping &amp; invoicing</li>
+            <li><i class="fas fa-check"></i> Front desk &amp; call handling</li>
+            <li><i class="fas fa-check"></i> DOT compliance monitoring</li>
+            <li><i class="fas fa-check"></i> Customer communication</li>
+            <div class="feat-divider"></div>
+            <li class="feat-label"><i></i>Coverage</li>
+            <li><i class="fas fa-check"></i> 6 days/week coverage</li>
+            <li><i class="fas fa-check"></i> Priority response SLA</li>
+            <li><i class="fas fa-check"></i> Bi-weekly performance calls</li>
+          </ul>
+
+          <a href="contact.html?plan=professional" class="pricing-card__cta cta--fill">
+            Get Started <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- SCALE -->
+        <div class="pricing-card reveal stagger-3" id="card-scale">
+          <p class="pricing-card__tier">Scale</p>
+          <h3 class="pricing-card__name">Operations</h3>
+          <p class="pricing-card__tagline">For fleet owners and multi-truck operations needing a fully managed back-office team.</p>
+
+          <div class="pricing-card__price">
+            <span class="price-currency">$</span>
+            <span class="price-amount" data-hourly="5" data-monthly="1400">5</span>
+            <span class="price-period" data-hourly-text="/hr · multi-agent" data-monthly-text="/mo · 2 agents">/hr · multi-agent</span>
+          </div>
+          <p class="price-monthly-note" data-hourly-note="2+ agents, 8hr shifts" data-monthly-note="~$4.55/hr each · Save 15%">2+ agents, 8hr shifts</p>
+
+          <ul class="pricing-card__features">
+            <li class="feat-label"><i></i>Everything in Professional, plus</li>
+            <li><i class="fas fa-check"></i> 2+ dedicated specialists</li>
+            <li><i class="fas fa-check"></i> Full accounts receivable</li>
+            <li><i class="fas fa-check"></i> IFTA quarterly filing</li>
+            <li><i class="fas fa-check"></i> Tax preparation support</li>
+            <li><i class="fas fa-check"></i> Multi-industry coverage</li>
+            <li><i class="fas fa-check"></i> Custom SOP development</li>
+            <div class="feat-divider"></div>
+            <li class="feat-label"><i></i>Coverage</li>
+            <li><i class="fas fa-check"></i> 7 days/week available</li>
+            <li><i class="fas fa-check"></i> Dedicated account manager</li>
+            <li><i class="fas fa-check"></i> Weekly strategy calls</li>
+          </ul>
+
+          <a href="contact.html?plan=operations" class="pricing-card__cta cta--outline">
+            Get Started <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- ENTERPRISE / CUSTOM -->
+      <div class="custom-strip reveal">
+        <div class="custom-strip__left">
+          <h3>Need a Custom Solution?</h3>
+          <p>Large fleets, multiple locations, or unique back-office needs? We build custom packages around your exact requirements. Volume discounts available for 3+ agents.</p>
+        </div>
+        <a href="contact.html?plan=custom" class="btn btn--primary">Talk to Us <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST ROW -->
+  <div class="trust-row" role="list" aria-label="Trust indicators">
+    <div class="trust-row__inner">
+      <div class="trust-item" role="listitem"><i class="fas fa-lock"></i> No long-term contracts</div>
+      <div class="trust-item" role="listitem"><i class="fas fa-times-circle"></i> Cancel anytime</div>
+      <div class="trust-item" role="listitem"><i class="fas fa-bolt"></i> 48-hour onboarding</div>
+      <div class="trust-item" role="listitem"><i class="fas fa-globe-americas"></i> Pakistan-based · US timezone</div>
+      <div class="trust-item" role="listitem"><i class="fas fa-headset"></i> Dedicated specialist</div>
+      <div class="trust-item" role="listitem"><i class="fas fa-dollar-sign"></i> Zero setup fee</div>
+    </div>
+  </div>
+
+  <!-- WHAT'S INCLUDED -->
+  <section class="includes-section" aria-labelledby="includes-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">What's Included</span>
+        <h2 class="section-title reveal" id="includes-heading">Every Plan Covers These Core Functions</h2>
+        <p class="section-subtitle reveal">Mix and match based on what your operation needs. Not everything — just what makes sense for you.</p>
+      </div>
+
+      <div class="includes-grid">
+        <div class="includes-col reveal stagger-1">
+          <div class="includes-col__icon"><i class="fas fa-satellite-dish"></i></div>
+          <h3>Dispatch</h3>
+          <ul>
+            <li>Load board monitoring</li>
+            <li>Rate negotiation</li>
+            <li>Driver coordination</li>
+            <li>Rate confirmations</li>
+            <li>After-hours coverage</li>
+          </ul>
+        </div>
+        <div class="includes-col reveal stagger-2">
+          <div class="includes-col__icon"><i class="fas fa-calculator"></i></div>
+          <h3>Finance & Admin</h3>
+          <ul>
+            <li>QuickBooks bookkeeping</li>
+            <li>Invoice generation</li>
+            <li>IFTA filing</li>
+            <li>Expense tracking</li>
+            <li>Accounts receivable</li>
+          </ul>
+        </div>
+        <div class="includes-col reveal stagger-3">
+          <div class="includes-col__icon"><i class="fas fa-headset"></i></div>
+          <h3>Front Desk</h3>
+          <ul>
+            <li>Inbound call answering</li>
+            <li>Customer communication</li>
+            <li>Appointment scheduling</li>
+            <li>Email management</li>
+            <li>Lead follow-up</li>
+          </ul>
+        </div>
+        <div class="includes-col reveal stagger-4">
+          <div class="includes-col__icon"><i class="fas fa-clipboard-check"></i></div>
+          <h3>Compliance</h3>
+          <ul>
+            <li>ELD log monitoring</li>
+            <li>DQ file management</li>
+            <li>Permit tracking</li>
+            <li>CSA score monitoring</li>
+            <li>Audit prep support</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section" aria-labelledby="faq-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">FAQ</span>
+        <h2 class="section-title reveal" id="faq-heading">Questions About Pricing?</h2>
+      </div>
+
+      <div class="faq-list" role="list">
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            How exactly does per-hour pricing work?
+            <i class="fas fa-plus"></i>
+          </button>
+          <div class="faq-answer" aria-hidden="true">
+            <div class="faq-answer-inner">
+              You're paying for a dedicated agent's working hours — not per action or per load. If your agent works 8 hours handling dispatch, calls, and paperwork, you pay for 8 hours. Simple as that. Monthly plans bundle those hours at a discounted rate.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Is there a setup fee or minimum commitment?
+            <i class="fas fa-plus"></i>
+          </button>
+          <div class="faq-answer" aria-hidden="true">
+            <div class="faq-answer-inner">
+              No setup fee — ever. The minimum on hourly plans is 40 hours/month (roughly 2 hours per business day). Monthly plans lock in a block of hours. There are no long-term contracts — you can cancel or adjust at the end of any billing cycle.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Can I mix services — e.g. dispatch AND bookkeeping?
+            <i class="fas fa-plus"></i>
+          </button>
+          <div class="faq-answer" aria-hidden="true">
+            <div class="faq-answer-inner">
+              Absolutely. Most clients use us for 2–4 functions simultaneously. Your specialist can split their time across dispatch, invoicing, and front desk within the same block of hours. If volume is high, we assign a second specialist.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            What timezone do your agents work in?
+            <i class="fas fa-plus"></i>
+          </button>
+          <div class="faq-answer" aria-hidden="true">
+            <div class="faq-answer-inner">
+              We operate entirely on US timezones — EST, CST, MST, and PST depending on your preference. Our team is based in Pakistan, but your clients and drivers will never know the difference. Your agent works your business hours.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            How fast is onboarding? What does it involve?
+            <i class="fas fa-plus"></i>
+          </button>
+          <div class="faq-answer" aria-hidden="true">
+            <div class="faq-answer-inner">
+              Onboarding takes 48 hours from signed agreement to live operations. We schedule a kickoff call, you share your systems and preferences, we assign your specialist, and they're handling your back office by day two. No lengthy training periods.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            What if I'm not happy with my specialist?
+            <i class="fas fa-plus"></i>
+          </button>
+          <div class="faq-answer" aria-hidden="true">
+            <div class="faq-answer-inner">
+              Just tell us. We reassign immediately at no cost. We want the relationship to work long-term, and that starts with having the right person on your account. Your satisfaction is the baseline, not the goal.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Do you serve all 12 industries at every price tier?
+            <i class="fas fa-plus"></i>
+          </button>
+          <div class="faq-answer" aria-hidden="true">
+            <div class="faq-answer-inner">
+              Yes. Trucking, towing, taxi, NEMT, sprinter van, car hauler, dump truck, moving trucks, freight brokers, bookkeeping, compliance, and luxury transport are all available at every plan level. The tier determines coverage hours and number of specialists, not which industries we serve.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="pricing-final-cta" aria-labelledby="pricing-cta-heading">
+    <div class="pricing-final-cta__inner reveal">
+      <span class="section-tag section-tag--light">Get Started</span>
+      <h2 id="pricing-cta-heading">Not Sure Which Plan Fits?<br>Let's Figure It Out Together.</h2>
+      <p>Book a free 20-minute call. We'll look at your operation, tell you exactly what you need, and give you a custom quote. No sales pitch — just an honest conversation.</p>
+      <div class="pricing-final-cta__actions">
+        <a href="contact.html" class="btn btn--primary btn--large">Book Free Consultation <i class="fas fa-arrow-right"></i></a>
+        <a href="index.html" class="btn btn--ghost-light btn--large">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="footer__logo"><span class="logo-mark">H</span>AULXIFY</a>
+        <p>Your complete remote back-office for logistics and transportation businesses. Based in Pakistan. Serving North America.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services/truck-dispatch.html">Truck Dispatch</a></li>
+          <li><a href="services/tow-truck.html">Tow Truck Dispatch</a></li>
+          <li><a href="services/taxi-dispatch.html">Taxi &amp; Rideshare</a></li>
+          <li><a href="services/medical-transport.html">NEMT Dispatch</a></li>
+          <li><a href="services/bookkeeping.html">Bookkeeping &amp; Taxes</a></li>
+          <li><a href="services/compliance.html">DOT Compliance</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+        <h4 style="margin-top:1.5rem;">Staff</h4>
+        <ul>
+          <li><a href="https://ehtishamrk.github.io/Email-Sender/portal.html" target="_blank" rel="noopener">Staff Portal</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; <span id="footerYear"></span> Haulxify. All rights reserved.</p>
+      <p class="footer__made">Built in Pakistan 🇵🇰 · Serving North America 🇺🇸</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/global.js"></script>
+<script src="js/nav.js"></script>
+<script>
+/* ── Billing Toggle Logic ── */
+const toggle       = document.getElementById('billingToggle');
+const labelHourly  = document.getElementById('label-hourly');
+const labelMonthly = document.getElementById('label-monthly');
+let   isMonthly    = false;
+
+toggle.addEventListener('click', () => {
+  isMonthly = !isMonthly;
+  toggle.classList.toggle('on', isMonthly);
+  toggle.setAttribute('aria-pressed', isMonthly);
+  labelHourly.classList.toggle('active', !isMonthly);
+  labelMonthly.classList.toggle('active', isMonthly);
+
+  document.querySelectorAll('.price-amount').forEach(el => {
+    el.textContent = isMonthly ? el.dataset.monthly : el.dataset.hourly;
+  });
+
+  document.querySelectorAll('.price-period').forEach(el => {
+    el.textContent = isMonthly ? el.dataset.monthlyText : el.dataset.hourlyText;
+  });
+
+  document.querySelectorAll('.price-monthly-note').forEach(el => {
+    el.textContent = isMonthly ? el.dataset.monthlyNote : el.dataset.hourlyNote;
+  });
+});
+
+/* ── FAQ Accordion ── */
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item   = btn.closest('.faq-item');
+    const answer = item.querySelector('.faq-answer');
+    const isOpen = item.classList.contains('open');
+
+    document.querySelectorAll('.faq-item.open').forEach(openItem => {
+      openItem.classList.remove('open');
+      openItem.querySelector('.faq-answer').setAttribute('aria-hidden', 'true');
+      openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+    });
+
+    if (!isOpen) {
+      item.classList.add('open');
+      answer.setAttribute('aria-hidden', 'false');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+/* ── Pre-select plan from URL param ── */
+const params = new URLSearchParams(window.location.search);
+const plan   = params.get('plan');
+if (plan) {
+  const map = { essential: 'card-starter', professional: 'card-growth', operations: 'card-scale' };
+  const target = document.getElementById(map[plan]);
+  if (target) {
+    setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'center' }), 400);
+  }
+}
+</script>
+</body>
+</html>

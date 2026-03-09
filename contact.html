@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Haulxify — Book a Free Consultation</title>
+  <meta name="description" content="Book a free consultation with Haulxify. Tell us about your logistics operation and we'll scope your remote back-office solution in one call.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://haulxify.com/contact.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/footer.css">
+
+  <style>
+    /* ============================================================
+       CONTACT PAGE STYLES
+       ============================================================ */
+
+    .contact-hero {
+      padding: 9rem 5% 5rem;
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 52px 52px;
+      pointer-events: none;
+    }
+    .contact-hero::after {
+      content: '';
+      position: absolute;
+      top: -80px; right: -60px;
+      width: 420px; height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,119,34,0.1), transparent 65%);
+      pointer-events: none;
+    }
+    .contact-hero__inner {
+      max-width: 620px;
+      position: relative;
+      z-index: 1;
+    }
+    .contact-hero h1 {
+      font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+      color: var(--white);
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      margin-bottom: 1rem;
+    }
+    .contact-hero h1 em { font-style: italic; color: var(--orange); }
+    .contact-hero p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.75;
+    }
+
+    /* Main grid */
+    .contact-body {
+      padding: 5rem 5% 6rem;
+      background: var(--off);
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 4rem;
+      max-width: 1060px;
+      margin: 0 auto;
+      align-items: start;
+    }
+
+    /* Left sidebar */
+    .contact-sidebar { position: sticky; top: 100px; }
+
+    .contact-info-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .contact-info-card h3 {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 1.5rem;
+    }
+    .contact-info-item {
+      display: flex;
+      gap: 0.875rem;
+      margin-bottom: 1.25rem;
+      align-items: flex-start;
+    }
+    .contact-info-item:last-child { margin-bottom: 0; }
+    .contact-info-item__icon {
+      width: 36px; height: 36px;
+      border-radius: var(--radius-sm);
+      background: var(--orange-light);
+      color: var(--orange);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .contact-info-item__body strong {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.2rem;
+    }
+    .contact-info-item__body span {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    .what-happens-card {
+      background: var(--navy);
+      border-radius: var(--radius-xl);
+      padding: 2rem;
+    }
+    .what-happens-card h3 {
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 1.25rem;
+    }
+    .what-happens-step {
+      display: flex;
+      gap: 0.875rem;
+      margin-bottom: 1.1rem;
+      align-items: flex-start;
+    }
+    .what-happens-step:last-child { margin-bottom: 0; }
+    .step-num {
+      width: 24px; height: 24px;
+      border-radius: 50%;
+      background: var(--orange);
+      color: var(--white);
+      font-size: 0.65rem;
+      font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .what-happens-step p {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.6;
+      margin: 0;
+    }
+    .what-happens-step p strong { color: var(--white); }
+
+    /* Form card */
+    .contact-form-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 2.75rem;
+      box-shadow: var(--shadow-md);
+    }
+    .contact-form-card h2 {
+      font-family: var(--font-body);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+    .contact-form-card > p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    /* Form fields */
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.45rem;
+      letter-spacing: 0.01em;
+    }
+    .form-group label span { color: var(--orange); }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-md);
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      color: var(--navy);
+      background: var(--white);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      outline: none;
+      border-color: var(--orange);
+      box-shadow: 0 0 0 3px rgba(232,119,34,0.12);
+    }
+    .form-input::placeholder,
+    .form-textarea::placeholder { color: var(--text-muted); }
+
+    .form-select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238a94a6' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+      cursor: pointer;
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 110px;
+      line-height: 1.6;
+    }
+
+    /* Checkbox group */
+    .checkbox-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+    }
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+    }
+    .checkbox-item input[type="checkbox"] {
+      width: 16px; height: 16px;
+      border: 1.5px solid var(--border);
+      border-radius: 4px;
+      accent-color: var(--orange);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .checkbox-item span {
+      font-size: 0.8rem;
+      color: var(--text-body);
+      line-height: 1.4;
+    }
+
+    /* Submit area */
+    .form-submit-area {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.875rem;
+    }
+    .form-submit-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 100%;
+      padding: 1rem;
+      background: var(--orange);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 700;
+      border: none;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.2s var(--ease);
+      box-shadow: 0 4px 16px rgba(232,119,34,0.3);
+    }
+    .form-submit-btn:hover {
+      background: var(--orange-dark);
+      box-shadow: 0 8px 24px rgba(232,119,34,0.4);
+      transform: translateY(-2px);
+    }
+    .form-submit-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+    .form-note {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+    }
+    .form-note i { color: var(--orange); }
+
+    /* Success / Error States */
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 3rem 2rem;
+    }
+    .form-success__icon {
+      width: 64px; height: 64px;
+      background: rgba(34,197,94,0.1);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-size: 1.75rem;
+      color: #22c55e;
+    }
+    .form-success h3 {
+      font-size: 1.3rem;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+    .form-success p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .form-error-msg {
+      display: none;
+      background: rgba(239,68,68,0.08);
+      border: 1px solid rgba(239,68,68,0.2);
+      border-radius: var(--radius-sm);
+      padding: 0.75rem 1rem;
+      font-size: 0.8rem;
+      color: #dc2626;
+      margin-top: 0.5rem;
+    }
+
+    /* ── SETUP INSTRUCTIONS SECTION ── */
+    .setup-section {
+      padding: 5rem 5%;
+      background: var(--white);
+      border-top: 1px solid var(--border);
+    }
+    .setup-card {
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--navy);
+      border-radius: var(--radius-xl);
+      padding: 2.75rem;
+      color: rgba(255,255,255,0.6);
+    }
+    .setup-card__header {
+      display: flex;
+      align-items: center;
+      gap: 0.875rem;
+      margin-bottom: 0.75rem;
+    }
+    .setup-badge {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: var(--orange);
+      color: var(--white);
+      padding: 0.25rem 0.6rem;
+      border-radius: 20px;
+    }
+    .setup-card h2 {
+      font-size: 1.3rem;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.01em;
+    }
+    .setup-card > p {
+      font-size: 0.85rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      color: rgba(255,255,255,0.5);
+    }
+    .setup-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .setup-step {
+      display: flex;
+      gap: 1.25rem;
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      align-items: flex-start;
+    }
+    .setup-step:last-child { border-bottom: none; }
+    .setup-step__num {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: var(--orange);
+      color: var(--white);
+      font-size: 0.7rem;
+      font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .setup-step__body h4 {
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.3rem;
+    }
+    .setup-step__body p {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.65;
+      margin: 0;
+    }
+    .setup-step__body code {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      background: rgba(255,255,255,0.08);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      color: var(--orange);
+      word-break: break-all;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .contact-sidebar { position: static; }
+    }
+    @media (max-width: 560px) {
+      .contact-form-card { padding: 1.75rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .checkbox-grid { grid-template-columns: 1fr; }
+      .setup-card { padding: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- NAV -->
+<nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo"><span class="logo-mark">H</span>AULXIFY</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" class="nav-link">Home</a></li>
+    <li class="nav-item-dropdown">
+      <button class="nav-link nav-link--dropdown" aria-haspopup="true" aria-expanded="false" id="servicesBtn">
+        Services <i class="fas fa-chevron-down nav-chevron"></i>
+      </button>
+      <div class="dropdown-menu" role="menu">
+        <a href="services/truck-dispatch.html" class="dropdown-link"><i class="fas fa-truck"></i> Truck Dispatch</a>
+        <a href="services/tow-truck.html" class="dropdown-link"><i class="fas fa-truck-pickup"></i> Tow Truck Dispatch</a>
+        <a href="services/taxi-dispatch.html" class="dropdown-link"><i class="fas fa-taxi"></i> Taxi &amp; Rideshare</a>
+        <a href="services/sprinter-van.html" class="dropdown-link"><i class="fas fa-shuttle-van"></i> Sprinter / Cargo Van</a>
+        <a href="services/medical-transport.html" class="dropdown-link"><i class="fas fa-ambulance"></i> Medical Transport (NEMT)</a>
+        <a href="services/car-hauler.html" class="dropdown-link"><i class="fas fa-car"></i> Car Hauler</a>
+        <a href="services/dump-truck.html" class="dropdown-link"><i class="fas fa-dumpster"></i> Dump Truck</a>
+        <a href="services/moving-truck.html" class="dropdown-link"><i class="fas fa-dolly"></i> Moving Truck</a>
+        <a href="services/freight-broker.html" class="dropdown-link"><i class="fas fa-handshake"></i> Freight Broker Support</a>
+        <a href="services/bookkeeping.html" class="dropdown-link"><i class="fas fa-calculator"></i> Bookkeeping &amp; Taxes</a>
+        <a href="services/compliance.html" class="dropdown-link"><i class="fas fa-clipboard-check"></i> DOT Compliance</a>
+        <a href="services/limousine.html" class="dropdown-link"><i class="fas fa-car-side"></i> Limousine &amp; Luxury</a>
+      </div>
+    </li>
+    <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+    <li><a href="about.html" class="nav-link">About</a></li>
+    <li><a href="blog.html" class="nav-link">Blog</a></li>
+    <li><a href="contact.html" class="nav-link active">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="hauler.html" target="_blank" rel="noopener" class="nav-btn nav-btn--hauler"><i class="fas fa-users"></i> Hauler</a>
+    <a href="contact.html" class="nav-btn nav-btn--primary">Get Started</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <button class="mobile-menu__close" id="mobileMenuClose"><i class="fas fa-times"></i></button>
+  <ul class="mobile-menu__links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="mobile-menu__cta">Get Started Free</a>
+</div>
+<div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+<main id="main-content">
+
+  <!-- HERO -->
+  <section class="contact-hero" aria-labelledby="contact-heading">
+    <div class="contact-hero__inner">
+      <span class="section-tag section-tag--light">Free Consultation</span>
+      <h1 id="contact-heading">Let's Talk About<br><em>Your Operation.</em></h1>
+      <p>No sales pitch. Just an honest conversation about your business, what's taking your time, and whether Haulxify is the right fit. Takes 20 minutes.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT BODY -->
+  <section class="contact-body" aria-labelledby="form-heading">
+    <div class="contact-grid">
+
+      <!-- SIDEBAR -->
+      <aside class="contact-sidebar">
+
+        <div class="contact-info-card reveal">
+          <h3>Get in Touch</h3>
+          <div class="contact-info-item">
+            <div class="contact-info-item__icon"><i class="fas fa-envelope"></i></div>
+            <div class="contact-info-item__body">
+              <strong>Email</strong>
+              <span>hello@haulxify.com</span>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-item__icon"><i class="fab fa-whatsapp"></i></div>
+            <div class="contact-info-item__body">
+              <strong>WhatsApp</strong>
+              <span>Available on request</span>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-item__icon"><i class="fas fa-clock"></i></div>
+            <div class="contact-info-item__body">
+              <strong>Response Time</strong>
+              <span>Within 24 hours · US timezone</span>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-item__icon"><i class="fas fa-globe-americas"></i></div>
+            <div class="contact-info-item__body">
+              <strong>Based In</strong>
+              <span>Pakistan 🇵🇰 · Serving North America 🇺🇸</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="what-happens-card reveal reveal--delay-1">
+          <h3>What happens next?</h3>
+          <div class="what-happens-step">
+            <div class="step-num">1</div>
+            <p><strong>We receive your form</strong> and review your details before the call — so we come prepared, not asking basic questions.</p>
+          </div>
+          <div class="what-happens-step">
+            <div class="step-num">2</div>
+            <p><strong>We reach out within 24 hours</strong> via email or WhatsApp to schedule a 20-minute discovery call at your convenience.</p>
+          </div>
+          <div class="what-happens-step">
+            <div class="step-num">3</div>
+            <p><strong>On the call</strong>, we scope exactly what you need — no upselling, just an honest recommendation.</p>
+          </div>
+          <div class="what-happens-step">
+            <div class="step-num">4</div>
+            <p><strong>If it's a fit</strong>, you get a custom quote same-day and we can onboard within 48 hours.</p>
+          </div>
+        </div>
+
+      </aside>
+
+      <!-- FORM -->
+      <div class="contact-form-card reveal reveal--delay-1">
+        <h2 id="form-heading">Tell Us About Your Business</h2>
+        <p>Fill in what you can. The more detail, the better prepared we'll be for your call.</p>
+
+        <!-- SUCCESS STATE -->
+        <div class="form-success" id="formSuccess">
+          <div class="form-success__icon"><i class="fas fa-check"></i></div>
+          <h3>Message Sent!</h3>
+          <p>We've received your details and will be in touch within 24 hours to schedule your free consultation. Check your email — we'll send a confirmation shortly.</p>
+        </div>
+
+        <!-- THE FORM -->
+        <!-- ════════════════════════════════════════════════════════
+             GOOGLE FORMS INTEGRATION
+             
+             TO CONNECT THIS FORM TO GOOGLE:
+             1. Go to forms.google.com and create a new form
+             2. Add these fields (names must match exactly):
+                - Name (Short answer)  
+                - Email (Short answer)
+                - Phone (Short answer)
+                - Company (Short answer)
+                - Industry (Dropdown)
+                - Fleet Size (Dropdown)
+                - Services Needed (Checkboxes)
+                - Message (Paragraph)
+                - Plan Interest (Short answer — hidden, pre-filled via URL)
+             3. Click the 3-dot menu → "Get pre-filled link"
+             4. From your form URL, copy the form ID:
+                forms.google.com/d/YOUR_FORM_ID/viewform
+             5. Replace YOUR_GOOGLE_FORM_ID below with that ID
+             6. For each field, get the entry ID by right-clicking the
+                input in pre-filled link and noting entry.XXXXXXX
+             7. Replace entry IDs below accordingly
+             
+             FOR AUTO-REPLY EMAILS (Apps Script):
+             1. In your Google Sheet (linked to the form), go to
+                Extensions → Apps Script
+             2. Paste the Apps Script code from the setup section below
+             3. Set up a trigger: On form submit → sendAutoReply
+             ════════════════════════════════════════════════════════ -->
+        <form id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="field-name">Full Name <span>*</span></label>
+              <input type="text" id="field-name" name="name" class="form-input" placeholder="John Smith" required autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="field-email">Email Address <span>*</span></label>
+              <input type="email" id="field-email" name="email" class="form-input" placeholder="john@company.com" required autocomplete="email">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="field-phone">Phone / WhatsApp</label>
+              <input type="tel" id="field-phone" name="phone" class="form-input" placeholder="+1 (555) 000-0000" autocomplete="tel">
+            </div>
+            <div class="form-group">
+              <label for="field-company">Company Name</label>
+              <input type="text" id="field-company" name="company" class="form-input" placeholder="Your Company LLC" autocomplete="organization">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="field-industry">Your Industry <span>*</span></label>
+              <select id="field-industry" name="industry" class="form-select" required>
+                <option value="" disabled selected>Select your industry</option>
+                <option value="Trucking / OTR">Trucking / OTR</option>
+                <option value="Tow Truck / Recovery">Tow Truck / Recovery</option>
+                <option value="Taxi / Rideshare">Taxi / Rideshare</option>
+                <option value="Medical Transport (NEMT)">Medical Transport (NEMT)</option>
+                <option value="Sprinter / Cargo Van">Sprinter / Cargo Van</option>
+                <option value="Car Hauler">Car Hauler</option>
+                <option value="Dump Truck">Dump Truck</option>
+                <option value="Moving Truck">Moving Truck</option>
+                <option value="Freight Brokerage">Freight Brokerage</option>
+                <option value="Limousine / Luxury">Limousine / Luxury</option>
+                <option value="Multiple / Other">Multiple / Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="field-fleet">Fleet / Operation Size</label>
+              <select id="field-fleet" name="fleet_size" class="form-select">
+                <option value="" disabled selected>Select size</option>
+                <option value="1 vehicle (solo operator)">1 vehicle (solo operator)</option>
+                <option value="2–5 vehicles">2–5 vehicles</option>
+                <option value="6–15 vehicles">6–15 vehicles</option>
+                <option value="16–50 vehicles">16–50 vehicles</option>
+                <option value="50+ vehicles">50+ vehicles</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Services You Need <span>*</span></label>
+            <div class="checkbox-grid">
+              <label class="checkbox-item">
+                <input type="checkbox" name="services" value="Dispatch">
+                <span>Dispatch Operations</span>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="services" value="Bookkeeping & Taxes">
+                <span>Bookkeeping &amp; Taxes</span>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="services" value="Front Desk & Calls">
+                <span>Front Desk &amp; Calls</span>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="services" value="DOT Compliance">
+                <span>DOT Compliance</span>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="services" value="Customer Support">
+                <span>Customer Support</span>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="services" value="Not sure yet">
+                <span>Not sure yet</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="field-message">Anything else we should know?</label>
+            <textarea id="field-message" name="message" class="form-textarea" placeholder="Tell us about your current challenges, what's taking the most time, or any questions you have..."></textarea>
+          </div>
+
+          <!-- Hidden plan field, pre-filled from URL param -->
+          <input type="hidden" id="field-plan" name="plan_interest" value="">
+
+          <div class="form-error-msg" id="formError">
+            <i class="fas fa-exclamation-circle"></i> Please fill in all required fields before submitting.
+          </div>
+
+          <div class="form-submit-area">
+            <button type="submit" class="form-submit-btn" id="submitBtn">
+              <span id="submitText">Send My Details</span>
+              <i class="fas fa-arrow-right" id="submitIcon"></i>
+            </button>
+            <p class="form-note">
+              <i class="fas fa-lock"></i>
+              No spam. No commitment. We'll reach out within 24 hours.
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- GOOGLE FORMS SETUP GUIDE -->
+  <section class="setup-section" aria-labelledby="setup-heading">
+    <div class="container">
+      <div class="setup-card reveal">
+        <div class="setup-card__header">
+          <span class="setup-badge">Developer Setup</span>
+        </div>
+        <h2 id="setup-heading">How to Connect This Form to Google Forms + Apps Script</h2>
+        <p>Follow these steps once to wire up form submissions to a Google Sheet and enable auto-reply emails. No server needed — runs entirely on Google's free infrastructure.</p>
+
+        <div class="setup-steps">
+          <div class="setup-step">
+            <div class="setup-step__num">1</div>
+            <div class="setup-step__body">
+              <h4>Create the Google Form</h4>
+              <p>Go to <code>forms.google.com</code> → New Form. Add fields: Name, Email, Phone, Company, Industry, Fleet Size, Services Needed, Message, Plan Interest. Link it to a Google Sheet (Responses tab → green Sheets icon).</p>
+            </div>
+          </div>
+          <div class="setup-step">
+            <div class="setup-step__num">2</div>
+            <div class="setup-step__body">
+              <h4>Get your Form ID and Entry IDs</h4>
+              <p>Your form URL looks like: <code>docs.google.com/forms/d/YOUR_FORM_ID/viewform</code>. To find entry IDs: open the form, click the 3-dot menu → "Get pre-filled link", fill each field, copy the URL, and note the <code>entry.XXXXXXXXX</code> values for each field.</p>
+            </div>
+          </div>
+          <div class="setup-step">
+            <div class="setup-step__num">3</div>
+            <div class="setup-step__body">
+              <h4>Update the JavaScript below with your IDs</h4>
+              <p>In <code>contact.html</code>, find the <code>GOOGLE_FORM_CONFIG</code> object in the script block and replace <code>FORM_ID</code> and each <code>entry.XXXXXXX</code> with your real values. The form will then POST directly to Google Forms silently.</p>
+            </div>
+          </div>
+          <div class="setup-step">
+            <div class="setup-step__num">4</div>
+            <div class="setup-step__body">
+              <h4>Add Apps Script for auto-reply emails</h4>
+              <p>In your linked Google Sheet, go to <code>Extensions → Apps Script</code>. Paste the auto-reply script (provided in <code>js/forms-appscript.gs</code>). Set a trigger: <code>On form submit → sendAutoReply</code>. This sends a confirmation email to every lead automatically.</p>
+            </div>
+          </div>
+          <div class="setup-step">
+            <div class="setup-step__num">5</div>
+            <div class="setup-step__body">
+              <h4>Test end-to-end</h4>
+              <p>Submit a test entry through the form on your website. Check that it appears in the Google Sheet, that you receive a notification email, and that the submitter receives an auto-reply. Done — fully functional backend, zero hosting cost.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="footer__logo"><span class="logo-mark">H</span>AULXIFY</a>
+        <p>Your complete remote back-office for logistics and transportation businesses. Based in Pakistan. Serving North America.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services/truck-dispatch.html">Truck Dispatch</a></li>
+          <li><a href="services/tow-truck.html">Tow Truck Dispatch</a></li>
+          <li><a href="services/taxi-dispatch.html">Taxi &amp; Rideshare</a></li>
+          <li><a href="services/medical-transport.html">NEMT Dispatch</a></li>
+          <li><a href="services/bookkeeping.html">Bookkeeping &amp; Taxes</a></li>
+          <li><a href="services/compliance.html">DOT Compliance</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+        <h4 style="margin-top:1.5rem;">Staff</h4>
+        <ul>
+          <li><a href="https://ehtishamrk.github.io/Email-Sender/portal.html" target="_blank" rel="noopener">Staff Portal</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; <span id="footerYear"></span> Haulxify. All rights reserved.</p>
+      <p class="footer__made">Built in Pakistan 🇵🇰 · Serving North America 🇺🇸</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/global.js"></script>
+<script src="js/nav.js"></script>
+<script>
+/* ══════════════════════════════════════════════════════════════
+   GOOGLE FORMS INTEGRATION CONFIG
+   
+   ▸ Replace YOUR_GOOGLE_FORM_ID with your actual form ID
+   ▸ Replace each entry.XXXXXXX with your actual entry IDs
+   ▸ Get entry IDs from the pre-filled link trick (see setup guide above)
+   ══════════════════════════════════════════════════════════════ */
+const GOOGLE_FORM_CONFIG = {
+  formId:   'YOUR_GOOGLE_FORM_ID',
+  entries: {
+    name:         'entry.XXXXXXXXX',
+    email:        'entry.XXXXXXXXX',
+    phone:        'entry.XXXXXXXXX',
+    company:      'entry.XXXXXXXXX',
+    industry:     'entry.XXXXXXXXX',
+    fleet_size:   'entry.XXXXXXXXX',
+    services:     'entry.XXXXXXXXX',
+    message:      'entry.XXXXXXXXX',
+    plan_interest:'entry.XXXXXXXXX',
+  }
+};
+
+/* ── Pre-fill plan from URL ── */
+const planParam = new URLSearchParams(window.location.search).get('plan');
+if (planParam) {
+  document.getElementById('field-plan').value = planParam;
+  // Map plan slug to readable label
+  const planLabels = {
+    essential: 'Essential Plan',
+    professional: 'Professional Plan',
+    operations: 'Operations Plan',
+    custom: 'Custom / Enterprise'
+  };
+  // Optionally show selected plan indicator
+  const label = planLabels[planParam];
+  if (label) {
+    const note = document.createElement('div');
+    note.style.cssText = `
+      display:inline-flex; align-items:center; gap:0.5rem;
+      background: var(--orange-light); border: 1px solid rgba(232,119,34,0.25);
+      border-radius: 20px; padding: 0.35rem 0.875rem;
+      font-size: 0.78rem; font-weight: 600; color: var(--orange-dark);
+      margin-bottom: 1.25rem;
+    `;
+    note.innerHTML = `<i class="fas fa-tag"></i> Interested in: ${label}`;
+    document.getElementById('form-heading').insertAdjacentElement('afterend', note);
+  }
+}
+
+/* ── Form submission ── */
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  const form      = e.target;
+  const submitBtn = document.getElementById('submitBtn');
+  const submitText = document.getElementById('submitText');
+  const submitIcon = document.getElementById('submitIcon');
+  const errorMsg  = document.getElementById('formError');
+  const successEl = document.getElementById('formSuccess');
+
+  // Validate required fields
+  const name     = form.name.value.trim();
+  const email    = form.email.value.trim();
+  const industry = form.industry.value;
+  const services = [...form.querySelectorAll('input[name="services"]:checked')].map(cb => cb.value);
+
+  if (!name || !email || !industry || !services.length) {
+    errorMsg.style.display = 'flex';
+    errorMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    return;
+  }
+  errorMsg.style.display = 'none';
+
+  // Loading state
+  submitBtn.disabled = true;
+  submitText.textContent = 'Sending...';
+  submitIcon.className = 'fas fa-spinner fa-spin';
+
+  // Build Google Forms POST URL
+  const formUrl = `https://docs.google.com/forms/d/${GOOGLE_FORM_CONFIG.formId}/formResponse`;
+  const cfg = GOOGLE_FORM_CONFIG.entries;
+
+  const params = new URLSearchParams();
+  params.append(cfg.name,          name);
+  params.append(cfg.email,         email);
+  params.append(cfg.phone,         form.phone.value.trim());
+  params.append(cfg.company,       form.company.value.trim());
+  params.append(cfg.industry,      industry);
+  params.append(cfg.fleet_size,    form.fleet_size.value);
+  params.append(cfg.message,       form.message.value.trim());
+  params.append(cfg.plan_interest, form.plan_interest.value);
+  services.forEach(s => params.append(cfg.services, s));
+
+  try {
+    // Google Forms doesn't support CORS — use no-cors mode
+    // The response will be opaque but the submission still works
+    await fetch(formUrl, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: params.toString()
+    });
+
+    // Show success (we assume success since no-cors hides response)
+    form.style.display = 'none';
+    successEl.style.display = 'block';
+
+  } catch (err) {
+    // Fallback: redirect to Google Form directly
+    window.open(`https://docs.google.com/forms/d/${GOOGLE_FORM_CONFIG.formId}/viewform`, '_blank');
+    submitBtn.disabled = false;
+    submitText.textContent = 'Send My Details';
+    submitIcon.className = 'fas fa-arrow-right';
+  }
+});
+</script>
+</body>
+</html>
